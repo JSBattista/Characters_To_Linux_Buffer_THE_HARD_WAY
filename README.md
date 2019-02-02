@@ -5,11 +5,15 @@ This project is based on other work, a good example of framebuffer handling in L
  http://raspberrycompote.blogspot.com/2015/01/low-level-graphics-on-raspberry-pi-part.html
  So what was done in for this project was a bunch of arrays of 1s and 0s representing characters and numbers were created and these arrays are looped through with a "set pixel" routine to determine when and where an actual pixel is written to with a color value. The fonts are based on the Aliens sentry guns. https://www.youtube.com/watch?v=HQDy-5IQvuU
  This demo assumes that not every system is going to be fast and have an HDMI screen (that overheats in my case - don't be me) so pay attention to this line:
+ 
  vinfo.bits_per_pixel =  8;
+ 
  The color values range 0 to 15. This is not the deepest color of course. If you raise this "depth" you could slow things down, but you get a wider range of colors. 
  And these:
+ 
  vinfo.xres = 1184;
  vinfo.yres = 624; 
+ 
  Your screen, be it HDMI, or some TFT LCD perhaps - it matters not to a Linux Framebuffer routine as long as you get the /dev/fbN right, where N is the Nth number of displays - is apt to differ. So dimensions of the screen and "depth" could differ. I have a TFT LCD screen that handles the output from an old noir infrared Raspberry camera well, but try any x32 bitmap on it without some conversion and things get interesting. 
  My goal overall was "just get some text to the screen". Arrays were created using something close to "Aliens auto-gun font" and routines written to set pixels to a given color value based on where we want it, X and Y and all that, and what's 1 or 0 in the glyph array. 
  From there some other routines were spawned: printing a string. Printing a number display. And rectangles, filled or hollow with a border, and lines. 
