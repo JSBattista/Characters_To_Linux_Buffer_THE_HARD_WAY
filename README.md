@@ -29,7 +29,7 @@ This project is based on other work, a good example of framebuffer handling in L
  
 Smaller numbers arrays are also used to be elements that point to arrays representing numbers, the Nth element corresponding to the number, ranging from 0-9. This spares us the atoi call that would be used for letters. 
 
-Overall, testined on a 1st gen single core Raspberry, it was fairly fast. Results may vary. 
+Overall, tested on a 1st gen single core Raspberry, it was fairly fast. Results may vary. It's basic C code all the way too. 
 
 There are other ways to to characters onto a screen. But I opted for this quick and dirty measure to ensure flexibility and simplicity. The "array fu" of this code may also prove useful for other things. The array need not be a letter or number or glyph of any sort - it can be a sprite for example, or anything you want. You are limited by the screen you use and the processor. 
 
