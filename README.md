@@ -12,6 +12,7 @@ This project is based on other work, a good example of framebuffer handling in L
  And these:
  
  vinfo.xres = 1184;
+ 
  vinfo.yres = 624; 
  
  Your screen, be it HDMI, or some TFT LCD perhaps - it matters not to a Linux Framebuffer routine as long as you get the /dev/fbN right, where N is the Nth number of displays - is apt to differ. So dimensions of the screen and "depth" could differ. I have a TFT LCD screen that handles the output from an old noir infrared Raspberry camera well, but try any x32 bitmap on it without some conversion and things get interesting. 
