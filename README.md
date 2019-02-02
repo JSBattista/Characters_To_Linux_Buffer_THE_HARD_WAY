@@ -2,7 +2,7 @@
 Quick and dirty characters to Linux Buffer in C - the hard way - with "glyph arrays", array fu, pointer fu, but no breasts, explosions,  or car chases
 This project is all about character. When looking to put characters to screen for a Linux Buffer, I wanted to create a display for data but the actual text of the console was too small on the barbones non-GUI Raspberry Pi that was targted for this project. 
 This project is based on other work, a good example of framebuffer handling in Linux. See 
- * http://raspberrycompote.blogspot.com/2015/01/low-level-graphics-on-raspberry-pi-part.html
+ http://raspberrycompote.blogspot.com/2015/01/low-level-graphics-on-raspberry-pi-part.html
  So what was done in for this project was a bunch of arrays of 1s and 0s representing characters and numbers were created and these arrays are looped through with a "set pixel" routine to determine when and where an actual pixel is written to with a color value. The fonts are based on the Aliens sentry guns. https://www.youtube.com/watch?v=HQDy-5IQvuU
  This demo assumes that not every system is going to be fast and have an HDMI screen (that overheats in my case - don't be me) so pay attention to this line:
  vinfo.bits_per_pixel =  8;
