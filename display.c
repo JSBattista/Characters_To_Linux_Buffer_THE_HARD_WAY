@@ -2250,11 +2250,11 @@ int main(int argc, char* argv[])
 
     // Store for reset (copy vinfo to vinfo_orig)
     memcpy(&orig_vinfo, &vinfo, sizeof(struct fb_var_screeninfo));
-
     // Change variable info
     vinfo.bits_per_pixel =  8;
-    vinfo.xres = 1184; // 960
-    vinfo.yres = 624; // 540
+	// Can change res here, or leave what was found originally
+    //vinfo.xres = 1184; 
+    //vinfo.yres = 624; 
     vinfo.xres_virtual = vinfo.xres;
     vinfo.yres_virtual = vinfo.yres * 2;
     if (ioctl(fbfd, FBIOPUT_VSCREENINFO, &vinfo)) {
