@@ -34,5 +34,6 @@ Overall, tested on a 1st gen single core Raspberry, it was fairly fast. Results 
 There are other ways to to characters onto a screen. But I opted for this quick and dirty measure to ensure flexibility and simplicity. The "array fu" of this code may also prove useful for other things. The array need not be a letter or number or glyph of any sort - it can be a sprite for example, or anything you want. You are limited by the screen you use and the processor. 
 
 If you want more fancy fonts, there are demos on the internet that take "real" fonts and convert them to pixels. If you can get these into arrays, such as a program tha reads a bitmap and turns it into an array of color values, you might use them as fonts in this program. Keep in mind that all of these, while displayed in code as 2D arrays, are really 1D arrays. So you have to know ahead of time what the dimensions of your arrays are supposed to be. The arrays in this demo were created manually. The entire ASCII ranges - 128 characters, are not completed. So if you want something that is not there, like lower case characters and punctuation, you will have to create it yourself. 
-
+Further notes:
+I'm noting a segmentation fault on a debian install on Beaglebone with an 800x600 resolution - but I'm using the same HDMI screen. Curious. Results will vary with system and OS. I'm even getting a lower default pixel depth on the Beaglebone. Both systems are non-GUI systems (GUIs are for housewives). 
 Have fun with this code. 
